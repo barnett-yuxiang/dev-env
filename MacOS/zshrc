@@ -1,0 +1,30 @@
+...
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+...
+
+plugins=(
+    git
+    poetry
+    web-search
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-completions
+    zsh-history-substring-search
+)
+
+# @yuli.kamakura: zsh-completions config
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+...
+
+# Customized by @yuli.kamakura {
+
+HomeBrew Config
+
+Useful Aliases
+
+Config Android Java mvnvm Go Python NodeJs Rust Custom Functions
+
+# End } Customized by @yuli.kamakura
