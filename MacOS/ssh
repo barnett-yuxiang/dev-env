@@ -1,0 +1,3 @@
+ssh-keygen -t rsa -b 4096 -C "<EMAIL>"
+id_rsa
+id_rsa.pub
