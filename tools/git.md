@@ -67,4 +67,6 @@ git config --global branch.sort -committerdatce
 $ git push --force-with-lease
 ```
 
+![Image](./assets/screenshot-20250121-155410.png)
+
 
