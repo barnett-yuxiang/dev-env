@@ -69,4 +69,21 @@ $ git push --force-with-lease
 
 ![Image](./assets/screenshot-20250121-155410.png)
 
+```
+signing commits with ssh
+
+$ git config gpg.format ssh
+
+$ git config user.signingkey ~/.ssh/key.pub
+
+$ git cat-file -p HEAD
+```
+
+```
+$ git push --signed
+```
+
+
+
+
 
