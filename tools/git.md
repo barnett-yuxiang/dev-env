@@ -155,5 +155,17 @@ geometric repacking
 ```
 sparse-checkouts
 ```
+![Image](./assets/screenshot-20250122-121432.png)
+
+### GitHub Stuff
+
+```
+allowed merge types
+```
+
+```
+auto merge
+```
+
 
 
