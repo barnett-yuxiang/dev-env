@@ -150,6 +150,10 @@ reachability bitmaps and
 geometric repacking
 ```
 
+### Monorepo Stuff
 
+```
+sparse-checkouts
+```
 
 
