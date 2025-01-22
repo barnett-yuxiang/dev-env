@@ -136,6 +136,19 @@ time git status
 chromium, 470k files
 ```
 
+```
+partial cloning
+
+$ git clone https://github.com/torvalds/linux.git
+> git clone --filter=blob:none
+> git clone --filter=tree:0
+```
+
+```
+multipack indexes and
+reachability bitmaps and
+geometric repacking
+```
 
 
 
