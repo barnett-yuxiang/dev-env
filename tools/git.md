@@ -179,3 +179,11 @@ refs/pull/*
 git ls-remote
 ```
 
+### GitButler
+
+```
+gitbutler.com
+```
+
+Thank you! Be sure to let us buy you a beer at our drinkup tonight!
+Le Waff, 6p
