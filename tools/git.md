@@ -167,5 +167,15 @@ allowed merge types
 auto merge
 ```
 
+```
+merge queue
+```
 
+```
+refs/pull/*
+```
+
+```
+git ls-remote
+```
 
