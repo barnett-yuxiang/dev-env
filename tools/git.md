@@ -83,6 +83,59 @@ $ git cat-file -p HEAD
 $ git push --signed
 ```
 
+```
+$ git maintainance start
+
+```
+![Image](./assets/screenshot-20250122-112540.png)
+
+```
+gc:                 disabled
+commit-graph:       hourly
+prefetch:           hourly
+loose-objects:      daily
+incremental-repack: daily
+pack-refs:          none
+```
+
+### Big Repo Stuff
+
+```
+Windows
+- approximately 3.5M files that results in a Git repo of about 300 gigabytes in size.
+- with 4,000 engineers producing 1,760 daily "lab builds" across 440 branches, plus thousands of pull request validation builds.
+```
+
+```
+Windows
+* VFS for Git
+* Scalar
+* Git
+```
+
+```
+prefetching
+```
+
+```
+commit-graph
+$ git config --global fetch.writeCommitGraph true
+
+linux, 1.2M commits
+(scott) > time git log --graph --oneline -10 > /dev/null // 9.89s
+and time git commit-graph write
+time git log --graph --oneline -10 > /dev/null // 0.01s
+```
+
+```
+filesystem monitor
+$ git config core.untrackedcache true
+$ git config core.fsmonitor true
+
+time git status
+chromium, 470k files
+```
+
 
 
 
