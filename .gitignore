@@ -1,1 +1,14 @@
+# This file specifies intentionally untracked files that Git should ignore
+
+# macOS system files
 .DS_Store
+
+# Qodo tool directory
+.qodo
+
+# Add more patterns below as needed:
+# Examples:
+# */node_modules/     # Node.js dependencies
+# *.log               # Log files
+# .env                # Environment variables
+# build/              # Build output directory
