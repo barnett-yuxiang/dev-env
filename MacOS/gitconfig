@@ -5,6 +5,8 @@
 	editor = vim
 [init]
 	defaultBranch = main
+[color]
+	ui = auto
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
