@@ -1,9 +1,0 @@
-ssh-keygen -t rsa -b 4096 -C "<EMAIL>"
-id_rsa
-id_rsa.pub
-
-Host aliyun-ecs
-    HostName <PUBLIC_IP>
-    User root
-    IdentityFile ~/.ssh/sophia-ssh.pem
-    Port 22
