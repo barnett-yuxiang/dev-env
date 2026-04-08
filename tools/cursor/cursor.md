@@ -1,8 +1,7 @@
 ## Models
-- claude-4-sonnet
-- claude-4-sonnet (thinking)
-- gemini-2.5-pro
-- gpt-5-codex
+- claude-4.6-sonnet (thinking)
+- gemini-3.1
+- gpt-5.4
 
 ## User Rules
 ```
