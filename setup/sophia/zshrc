@@ -99,15 +99,12 @@ plugins=(
 # Source private config (secrets, identity info)
 [[ -f ~/.zshrc.private ]] && source ~/.zshrc.private
 
-# Config fpath completions {{{
+# Config fpath completions {{
 
 # zsh-completions config
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
-# Docker CLI completions (moved here so oh-my-zsh compinit handles it in one pass)
-fpath=("$HOME/.docker/completions" $fpath)
-
-# }}} Config fpath completions
+# }} Config fpath completions
 
 # End } Customized by @yuli.kamakura
 
@@ -141,12 +138,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customized by @yuli.kamakura {
 
-# HomeBrew Config {{{
+# HomeBrew Config {{
 
 # Base Flags
-export LDFLAGS="$LDFLAGS"
-export CPPFLAGS="$CPPFLAGS"
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH"
+# curl / sqlite / zlib accumulate into LDFLAGS, CPPFLAGS, PKG_CONFIG_PATH below
 
 # curl
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
@@ -168,9 +163,9 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
 # Note for tcl-tk
 # If you need the sqlite3_analyzer binary, it's available in the `sqlite-analyzer` formula.
 
-# }}} HomeBrew Config
+# }} HomeBrew Config
 
-# Useful Aliases {{{
+# Useful Aliases {{
 
 # Common Directory Listing
 alias ll='ls -alF'  # List all files in long format, including hidden ones, and append file type indicators
@@ -191,41 +186,42 @@ alias update-gitconfig-editor-vim='git config --global core.editor "vim"'
 alias update-gitconfig-default-branch='git config --global init.defaultBranch "main"'
 alias update-gitconfig-color-ui='git config --global color.ui "auto"'
 
-# }}} Useful Aliases
+# }} Useful Aliases
 
-# Useful Function {{{
+# Useful Function {{
 
 ggitcfg_check() {
     git --no-pager config --global -l
 }
 
-# }}} Useful Function
+# }} Useful Function
 
-# Config Android env {{{
+# Config Android env {{
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 # export ANDROID_AVD_HOME=$HOME/.android/avd
-export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 
-# }}} Config Android env
+# }} Config Android env
 
-# Config Java env {{{
+# Config Java env {{
 
+# 1.Oracle JDK
 # https://www.oracle.com/java/technologies/downloads
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home
 # export PATH=$JAVA_HOME/bin:$PATH
 
-# 1.mvnvm
+# 2.mvnvm
 # https://mvnvm.org
 # $ cat mvnvm.properties
 # mvn_version=3.9.4
 # Alternatively, set properties in ${HOME}/.mvnvm.properties to apply to all projects
 
-# }}} Config Java env
+# }} Config Java env
 
-# Config Go env {{{
+# Config Go env {{
 
 # go version go1.25.7 darwin/arm64
 # https://go.dev/doc/install
@@ -233,9 +229,9 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
 
-# }}} Config Go env
+# }} Config Go env
 
-# Config Python env {{{
+# Config Python env {{
 
 # 1.pyenv
 # https://github.com/pyenv/pyenv
@@ -260,9 +256,9 @@ eval "$(pyenv virtualenv-init -)"
 # - uv cache prune
 export PATH=$HOME/.local/bin:$PATH
 
-# }}} Config Python env
+# }} Config Python env
 
-# Config Node env {{{
+# Config Node env {{
 
 # 1.nvm
 # https://github.com/nvm-sh/nvm
@@ -279,84 +275,79 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 #   *) export PATH="$PNPM_HOME:$PATH" ;;
 # esac
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
 # 3.bun
 # install: curl -fsSL https://bun.sh/install | bash
 # upgrade: bun upgrade
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# }}} Config Node env
+# bun completions (self-registers via `compdef` at EOF, safe to source here)
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 
-# Config Rust env {{{
+# }} Config Node env
+
+# Config Rust env {{
 
 # https://www.rust-lang.org/tools/install
 # default install: $HOME/.zshenv and $HOME/.profile
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# }}} Config Rust env
+# }} Config Rust env
 
-# Config Ruby env {{{
+# Config Ruby env {{
 
-# 1.rbenv
+# rbenv
 # https://github.com/rbenv/rbenv
 # install: brew install rbenv ruby-build
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# }}} Config Ruby env
+# }} Config Ruby env
 
-# Config dev-garage {{{
+# Config dev-garage {{
 
 # Commonly used shell scripts and command-line tools
 # https://github.com/barnett-yuxiang/dev-garage
 export PATH="$HOME/repo_projects/toolkit/dev-garage:$PATH"
 
-# }}} Config dev-garage
+# }} Config dev-garage
 
-# Config p10k theme {{{
-
-# New config: ~/.p10k.zsh.
-# Backup of ~/.zshrc: $TMPDIR/.zshrc.kN80xuw66Y.
-#
-# See ~/.zshrc changes:
-#
-#   diff $TMPDIR/.zshrc.kN80xuw66Y ~/.zshrc
-#
-# File feature requests and bug reports at https://github.com/romkatv/powerlevel10k/issues
+# Config p10k theme {{
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# }}} Config p10k theme
+# }} Config p10k theme
 
-# Config starship.rs {{{
+# Config starship.rs {{
 
 # https://starship.rs/
 # Add the following to the end of ~/.zshrc
 # eval "$(starship init zsh)"
 
-# }}} Config starship.rs
+# }} Config starship.rs
 
-# Config auto-added by application installers {{{
+# Config auto-added by application installers {{
 
 # 1.Tools
 # Added by Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+# export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # 2.Docker
-# Docker CLI completions fpath moved above oh-my-zsh source
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/sophia/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
 
-# }}} Config auto-added by application installers
+# }} Config auto-added by application installers
 
-# Config Top PATH {{{
+# Config Top PATH {{
 
 # include: yt-dlp_macos
 # include: repo // aosp
 export PATH="$HOME/bin:$PATH"
 
-# }}} Config Top PATH
+# }} Config Top PATH
 
 # End } Customized by @yuli.kamakura
