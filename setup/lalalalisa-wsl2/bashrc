@@ -1,0 +1,67 @@
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+
+# Customized by @yuli.kamakura {
+
+# Config useful alias {{
+
+# Modern CLI
+alias bat='batcat'
+alias fd='fdfind'
+
+# }} Config useful alias
+
+# Config fzf {{
+
+# Ctrl-R  搜索历史命令
+# Ctrl-T  搜索文件
+# Alt-C   搜索目录并 cd
+
+# fzf key bindings: Ctrl-R / Ctrl-T / Alt-C
+source /usr/share/doc/fzf/examples/key-bindings.bash
+
+# fzf bash completion
+source /usr/share/bash-completion/completions/fzf
+
+# }} Config fzf
+
+# Config Python env {{
+
+# pyenv update
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+eval "$(pyenv virtualenv-init -)"
+
+# }} Config Python env
+
+# Config Node env {{
+
+# nvm --version
+# type nvm
+# nvm install 23
+# nvm use 23
+# nvm alias default 23
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# }} Config Node env
+
+# Config Top PATH {{
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+# }} Config Top PATH
+
+# End } Customized by @yuli.kamakura
