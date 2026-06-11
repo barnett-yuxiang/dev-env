@@ -2,6 +2,13 @@ ssh-keygen -t rsa -b 4096 -C "<EMAIL>"
 id_rsa
 id_rsa.pub
 
+# GitHub
+ssh-keygen -t ed25519 -C "<EMAIL>" -f ~/.ssh/id_ed25519_github
+
+# Codeup
+ssh-keygen -t ed25519 -C "<EMAIL>" -f ~/.ssh/id_ed25519_codeup
+
+
 Host aliyun-ecs
     HostName <PUBLIC_IP>
     User root
