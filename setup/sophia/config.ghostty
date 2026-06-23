@@ -1,0 +1,53 @@
+# ========================================================
+# Sophia · Ghostty config
+# ========================================================
+
+# ---------- Font ----------
+
+font-size = 13
+
+# Retina 上字体更清晰(macOS)
+font-thicken = true
+
+# ---------- Appearance ----------
+
+# 固定暗色;单一主题下 window-theme 默认 auto,titlebar 同步变暗
+theme = Catppuccin Mocha
+
+# 关闭光标闪烁
+cursor-style-blink = false
+
+# 标签整合进标题栏,更紧凑
+macos-titlebar-style = tabs
+
+# ---------- Window ----------
+
+# 初始网格:列 x 行
+window-width = 168
+window-height = 48
+
+# 内边距
+window-padding-x = 8
+window-padding-y = 6
+
+# 固定启动尺寸,不恢复上次窗口状态
+window-save-state = never
+
+# ---------- Resize ----------
+
+# 按终端单元格而非像素 resize
+window-step-resize = true
+
+# resize 时显示 列x行(首次开窗不显示)
+resize-overlay = after-first
+
+# ---------- Misc ----------
+
+# 回滚缓冲 ~100MB(默认 ~10MB,长 build log 易截断)
+scrollback-limit = 100000000
+
+# 左 Option 作为 Alt
+macos-option-as-alt = left
+
+# 禁止程序通过转义序列弹出系统通知
+desktop-notifications = false
