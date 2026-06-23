@@ -48,3 +48,6 @@ scrollback-limit = 100000000
 
 # 左 Option 作为 Alt
 macos-option-as-alt = left
+
+# 禁止程序通过转义序列弹出系统通知
+desktop-notifications = false
