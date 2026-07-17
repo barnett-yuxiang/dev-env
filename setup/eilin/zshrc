@@ -1,1 +1,158 @@
-1
+# Native zsh config v0.0.7
+
+# Verify the Homebrew prefix:
+#   brew --prefix
+
+# Prerequisites:
+#   brew install curl wget git
+#   brew install bat eza ripgrep jq fzf
+#   brew install tmux
+#   brew install gh
+
+# Install pyenv:
+#   brew install pyenv
+# Install Python build dependencies:
+#   brew install openssl@3 readline sqlite3 xz tcl-tk@8 libb2 zstd zlib pkgconfig
+
+# Private configuration:
+#   Create "$HOME/.zshrc.private" for private or machine-specific variables.
+#   chmod 600 "$HOME/.zshrc.private"
+#
+# Example:
+#   export GIT_USER_NAME="xxx"
+#   export GIT_USER_EMAIL="xxx"
+
+# Validate the zsh configuration syntax:
+#   zsh -n "$HOME/.zshrc"
+# No output means that the syntax is valid.
+ 
+# Verify the configured commands and environment:
+# 新开 Terminal tab
+#   echo "$SHLVL"
+#   type -a curl
+#   type ell
+#   echo "$GOPATH"
+#   print -l ${(s.:.)PATH} | sort | uniq -d
+
+# Execution order:
+# 1. 初始化 native zsh 基础功能
+# 2. 加载 private environment variables
+# 3. 配置 Homebrew formula overrides
+# 4. 定义依赖这些变量的 aliases 和 functions
+# 5. 配置 Go、Python、Node 等环境
+
+# Config basic zshrc {
+
+# Command history
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+
+# Native zsh completion
+autoload -Uz compinit
+compinit
+
+# fzf shell integration
+source <(fzf --zsh)
+
+# } Config basic zshrc
+
+# Config Private env {
+
+# Load private or machine-specific environment variables
+source "$HOME/.zshrc.private"
+
+# } Config Private env
+
+# Customized by @yuli.kamakura {
+
+# HomeBrew Config {{
+
+# Base Flags
+# curl / sqlite / zlib accumulate into LDFLAGS, CPPFLAGS, PKG_CONFIG_PATH below
+
+# curl
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/curl/lib${LDFLAGS:+ $LDFLAGS}"
+export CPPFLAGS="-I/opt/homebrew/opt/curl/include${CPPFLAGS:+ $CPPFLAGS}"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/curl/lib/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}"
+
+# sqlite
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib${LDFLAGS:+ $LDFLAGS}"
+export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include${CPPFLAGS:+ $CPPFLAGS}"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/sqlite/lib/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}"
+
+# zlib
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib${LDFLAGS:+ $LDFLAGS}"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include${CPPFLAGS:+ $CPPFLAGS}"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}"
+
+# Note for tcl-tk
+# If you need the sqlite3_analyzer binary, it's available in the `sqlite-analyzer` formula.
+
+# }} HomeBrew Config
+
+# Useful Aliases {{
+
+# Standard macOS directory listing
+alias ll='ls -alF'  # Long format, hidden files and file type indicators
+alias la='ls -A'    # All entries except "." and ".."
+alias l='ls -CF'    # Column format with file type indicators
+
+# Enhanced directory listing with eza
+alias ell='eza -lah --git --group-directories-first'
+alias ela='eza -a --group-directories-first'
+alias el='eza --group-directories-first'
+
+# Update global gitconfig
+alias update-gitconfig-github='git config --global user.name "$GIT_USER_NAME" && git config --global user.email "$GIT_USER_EMAIL"'
+alias update-gitconfig-editor-vim='git config --global core.editor "vim"'
+alias update-gitconfig-default-branch='git config --global init.defaultBranch "main"'
+alias update-gitconfig-color-ui='git config --global color.ui "auto"'
+
+# }} Useful Aliases
+
+# Useful Function {{
+
+ggitcfg_check() {
+    git --no-pager config --global -l
+}
+
+# 检查当前 PATH 是否重复
+# 查看每个 PATH entry:
+#   print -l ${(s.:.)PATH}
+#
+# 检查重复项:
+#   print -l ${(s.:.)PATH} | sort | uniq -d
+#
+# No output means that PATH contains no duplicated entries.
+
+# }} Useful Function
+
+# Config Go env {{
+
+# go version go1.25.12 darwin/arm64
+# https://go.dev/doc/install
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+export GO111MODULE=on
+
+# }} Config Go env
+
+# Config Top PATH {{
+
+# include: user-installed command-line tools
+export PATH="$HOME/.local/bin:$PATH"
+
+# include: personal scripts and binaries
+# include: yt-dlp_macos
+# include: repo // from aosp
+export PATH="$HOME/bin:$PATH"
+
+# }} Config Top PATH
+
+# End } Customized by @yuli.kamakura
