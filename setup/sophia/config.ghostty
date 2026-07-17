@@ -1,53 +1,54 @@
-# ========================================================
 # Sophia · Ghostty config
-# ========================================================
+#
+# Location: ~/.config/ghostty/config.toml
 
 # ---------- Font ----------
 
+font-family = JetBrainsMono Nerd Font Mono
 font-size = 13
 
-# Retina 上字体更清晰(macOS)
+# 稍微加粗字体笔画，仅 macOS
 font-thicken = true
 
 # ---------- Appearance ----------
 
-# 固定暗色;单一主题下 window-theme 默认 auto,titlebar 同步变暗
+# 固定暗色主题；tabs 标题栏会根据终端背景自动使用暗色外观
 theme = Catppuccin Mocha
 
 # 关闭光标闪烁
 cursor-style-blink = false
 
-# 标签整合进标题栏,更紧凑
+# 将 Tab bar 整合进标题栏
 macos-titlebar-style = tabs
 
 # ---------- Window ----------
 
-# 初始网格:列 x 行
+# 初始终端网格：列 × 行
 window-width = 168
 window-height = 48
 
-# 内边距
+# 窗口内边距，单位为 point
 window-padding-x = 8
 window-padding-y = 6
 
-# 固定启动尺寸,不恢复上次窗口状态
+# 不恢复上一次的窗口、Tab 和 Split 状态
 window-save-state = never
 
 # ---------- Resize ----------
 
-# 按终端单元格而非像素 resize
+# 按终端 Cell 的整数倍调整窗口大小
 window-step-resize = true
 
-# resize 时显示 列x行(首次开窗不显示)
+# 首次创建窗口时不显示，后续 resize 时显示列数 × 行数
 resize-overlay = after-first
 
 # ---------- Misc ----------
 
-# 回滚缓冲 ~100MB(默认 ~10MB,长 build log 易截断)
+# 每个 Terminal surface 最多约 100 MB scrollback
 scrollback-limit = 100000000
 
-# 左 Option 作为 Alt
+# 左 Option 作为 Alt，右 Option 保留 macOS 原始行为
 macos-option-as-alt = left
 
-# 禁止程序通过转义序列弹出系统通知
+# 禁止终端程序通过 Escape Sequence 发送系统通知
 desktop-notifications = false
