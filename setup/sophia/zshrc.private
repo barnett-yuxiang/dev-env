@@ -12,8 +12,8 @@ export IOHUB_METABASE_ACCESS_CODE="<YOUR_IOHUB_METABASE_ACCESS_CODE>"
 export ANTHROPIC_BASE_URL="https://new-api.iohubonline.club"
 export ANTHROPIC_AUTH_TOKEN="<>"
 
-# laude Code 默认模型
+# Claude Code 默认模型
 export ANTHROPIC_MODEL="claude-opus-4-8-thinking"
 
-# laude Code 推理强度
+# Claude Code 推理强度
 export CLAUDE_CODE_EFFORT_LEVEL="xhigh"
