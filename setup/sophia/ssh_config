@@ -1,14 +1,28 @@
-ssh-keygen -t rsa -b 4096 -C "<EMAIL>"
-id_rsa
-id_rsa.pub
-
 # GitHub
 ssh-keygen -t ed25519 -C "<EMAIL>" -f ~/.ssh/id_ed25519_github
 
 # Codeup
 ssh-keygen -t ed25519 -C "<EMAIL>" -f ~/.ssh/id_ed25519_codeup
 
+# GitHub
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_github
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    UseKeychain yes
 
+# Alibaba Cloud Codeup
+Host codeup.aliyun.com
+    HostName codeup.aliyun.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_codeup
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    UseKeychain yes
+
+#
 Host aliyun-ecs
     HostName <PUBLIC_IP>
     User root
@@ -17,6 +31,8 @@ Host aliyun-ecs
     Port 22
     ServerAliveInterval 60
     ServerAliveCountMax 10
+
+#
 Host openclaw-malaysia
     HostName <PUBLIC_IP>
     User ecs-user
