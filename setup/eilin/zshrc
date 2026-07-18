@@ -25,7 +25,7 @@
 # Validate the zsh configuration syntax:
 #   zsh -n "$HOME/.zshrc"
 # No output means that the syntax is valid.
- 
+
 # Verify the configured commands and environment:
 # 新开 Terminal tab
 #   echo "$SHLVL"
@@ -109,10 +109,11 @@ alias ela='eza -a --group-directories-first'
 alias el='eza --group-directories-first'
 
 # Update global gitconfig
-alias update-gitconfig-github='git config --global user.name "$GIT_USER_NAME" && git config --global user.email "$GIT_USER_EMAIL"'
+alias update-gitconfig-user='git config --global user.name "$GIT_USER_NAME" && git config --global user.email "$GIT_USER_EMAIL"'
 alias update-gitconfig-editor-vim='git config --global core.editor "vim"'
 alias update-gitconfig-default-branch='git config --global init.defaultBranch "main"'
 alias update-gitconfig-color-ui='git config --global color.ui "auto"'
+alias update-gitconfig-autocrlf-input='git config --global core.autocrlf "input"'
 
 # }} Useful Aliases
 
@@ -142,6 +143,62 @@ export PATH="$GOPATH/bin:$PATH"
 export GO111MODULE=on
 
 # }} Config Go env
+
+# Config Python env {{
+
+# 1.pyenv
+# https://github.com/pyenv/pyenv
+# install: brew install pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+# 2.pyenv-virtualenv
+# https://github.com/pyenv/pyenv-virtualenv
+# install: $(pyenv root)/plugins/pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
+
+# 3.poetry
+# https://github.com/python-poetry/install.python-poetry.org
+# https://python-poetry.org/docs/main/
+# - install instructions
+# - poetry completions zsh > ~/.oh-my-zsh/custom/plugins/poetry/_poetry and plugins=(... poetry)
+
+# 4.uv
+# curl -LsSf https://astral.sh/uv/install.sh | sh
+# - uv self update
+# - uv cache prune
+# export PATH=$HOME/.local/bin:$PATH
+
+# }} Config Python env
+
+# Config Node env {{
+
+# 1.nvm
+# https://github.com/nvm-sh/nvm
+# Manual Upgrade, refer to the official website
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# 2.pnpm
+# https://pnpm.io/
+# export PNPM_HOME="$HOME/Library/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+
+# 3.bun
+# install: curl -fsSL https://bun.sh/install | bash
+# upgrade: bun upgrade
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions (self-registers via `compdef` at EOF, safe to source here)
+# [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+
+# }} Config Node env
 
 # Config Top PATH {{
 
