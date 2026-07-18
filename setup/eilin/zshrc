@@ -1,4 +1,4 @@
-# Native zsh config v0.0.9
+# Native zsh config v0.0.10
 
 # Verify the Homebrew prefix:
 #   brew --prefix
@@ -63,6 +63,21 @@ zstyle ':completion:*' menu select
 
 # fzf shell integration
 source <(fzf --zsh)
+
+# Native zsh Git prompt
+# + = staged changes, * = unstaged tracked changes
+autoload -Uz vcs_info add-zsh-hook
+setopt PROMPT_SUBST
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr '+'
+zstyle ':vcs_info:git:*' unstagedstr '*'
+zstyle ':vcs_info:git:*' formats ' %F{cyan}[%b%c%u]%f'
+zstyle ':vcs_info:git:*' actionformats ' %F{yellow}[%b|%a%c%u]%f'
+
+add-zsh-hook precmd vcs_info
+PROMPT='%n@%m %1~${vcs_info_msg_0_} %# '
 
 # } Config basic zshrc
 
