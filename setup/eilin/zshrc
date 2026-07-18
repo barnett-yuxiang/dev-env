@@ -1,4 +1,4 @@
-# Native zsh config v0.0.8
+# Native zsh config v0.0.9
 
 # Verify the Homebrew prefix:
 #   brew --prefix
@@ -56,8 +56,10 @@ setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 
 # Native zsh completion
+zmodload -i zsh/complist
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' menu select
 
 # fzf shell integration
 source <(fzf --zsh)
