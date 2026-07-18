@@ -1,4 +1,4 @@
-# Native zsh config v0.0.7
+# Native zsh config v0.0.8
 
 # Verify the Homebrew prefix:
 #   brew --prefix
@@ -8,6 +8,9 @@
 #   brew install bat eza ripgrep jq fzf
 #   brew install tmux
 #   brew install gh
+
+# Install native zsh plugins:
+#   brew install zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting
 
 # Install pyenv:
 #   brew install pyenv
@@ -40,6 +43,7 @@
 # 3. 配置 Homebrew formula overrides
 # 4. 定义依赖这些变量的 aliases 和 functions
 # 5. 配置 Go、Python、Node 等环境
+# 6. 最后加载 zsh plugins，保持 zsh-syntax-highlighting 为最后一条执行命令
 
 # Config basic zshrc {
 
@@ -212,4 +216,23 @@ export PATH="$HOME/bin:$PATH"
 
 # }} Config Top PATH
 
-# End } Customized by @yuli.kamakura
+# } Customized by @yuli.kamakura
+
+# Config zsh plugins {
+
+# Command autosuggestions
+source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+# History substring search
+source "/opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+
+# Bind arrow keys to history substring search
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Command syntax highlighting; must remain the final sourced plugin
+source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# EOF } Config zsh plugins
