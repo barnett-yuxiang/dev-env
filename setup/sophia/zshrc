@@ -185,6 +185,7 @@ alias update-gitconfig-github='git config --global user.name "$GIT_USER_NAME" &&
 alias update-gitconfig-editor-vim='git config --global core.editor "vim"'
 alias update-gitconfig-default-branch='git config --global init.defaultBranch "main"'
 alias update-gitconfig-color-ui='git config --global color.ui "auto"'
+alias update-gitconfig-quotepath-false='git config --global core.quotepath "false"'
 
 # }} Useful Aliases
 
