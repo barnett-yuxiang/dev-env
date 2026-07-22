@@ -224,6 +224,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Config Top PATH {{
 
+# include: commonly used shell scripts and command-line tools
+# https://github.com/barnett-yuxiang/dev-garage
+export PATH="$HOME/repo_projects/github/toolkit/dev-garage:$PATH"
+
 # include: user-installed command-line tools
 export PATH="$HOME/.local/bin:$PATH"
 
