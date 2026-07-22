@@ -1,11 +1,11 @@
 # sophia · ghostty config
 #
-# Location: ~/.config/ghostty/config.toml
+# Location: ~/.config/ghostty/config.ghostty
 
 # ---------- Font ----------
 
-# MesloLGS Nerd Font
-font-family = JetBrainsMono Nerd Font Mono
+# JetBrainsMono Nerd Font, FiraCode Nerd Font, FiraMono Nerd Font
+font-family = MesloLGS Nerd Font
 font-size = 13
 
 # 稍微加粗字体笔画，仅 macOS
@@ -31,6 +31,9 @@ window-height = 48
 # 窗口内边距，单位为 point
 window-padding-x = 8
 window-padding-y = 6
+
+# 均衡 Cell 无法整除产生的额外边缘空间
+window-padding-balance = true
 
 # 不恢复上一次的窗口、Tab 和 Split 状态
 window-save-state = never
