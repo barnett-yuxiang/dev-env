@@ -1,3 +1,7 @@
+# lalalalisa-wsl2 环境描述
+
+`lalalalisa-wsl2` 是 HP Windows 11 主机 [lalalalisa](../lalalalisa/ENVIRONMENTS.md) 上的 WSL2 子系统，系统为 Ubuntu 24，是主要的日常开发环境。
+
 ## 安装现代 CLI 工具链
 
 ```bash
