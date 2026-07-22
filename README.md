@@ -19,7 +19,7 @@
 | [`lalalalisa/`](setup/lalalalisa/) | Linux | 现代 CLI 工具链（`rg` / `fd` / `eza` / `bat` / `jq` / `fzf`）安装说明 |
 | [`lalalalisa-wsl2/`](setup/lalalalisa-wsl2/) | WSL2 | bash 配置（`bashrc`），含 pyenv、nvm、fzf |
 | [`pmclaw/`](setup/pmclaw/) | - | TODO |
-| [`yuxiang-website/`](setup/yuxiang-website/) | - | TODO |
+| [`website-guangzhou/`](setup/website-guangzhou/) | Linux (阿里云 ECS) | 个人网站服务器，Ubuntu 22.04 + nginx |
 
 ## 工具配置（tools/）
 
