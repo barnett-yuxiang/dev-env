@@ -1,3 +1,6 @@
+# barnettclaw 环境描述
+
+`barnettclaw` 是 Barnett 的 OpenClaw 环境，目前还在搭建中，暂无具体的设备和环境参数。
 
 ## 安装现代 CLI 工具链
 
