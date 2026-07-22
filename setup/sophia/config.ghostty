@@ -1,9 +1,10 @@
-# Sophia · Ghostty config
+# sophia · ghostty config
 #
 # Location: ~/.config/ghostty/config.toml
 
 # ---------- Font ----------
 
+# MesloLGS Nerd Font
 font-family = JetBrainsMono Nerd Font Mono
 font-size = 13
 
