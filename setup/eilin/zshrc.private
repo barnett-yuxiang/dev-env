@@ -13,7 +13,7 @@ export IOHUB_METABASE_ACCESS_CODE="<YOUR_IOHUB_METABASE_ACCESS_CODE>"
 # Context/Output: 1M / 128K (stream required when output > 16K)
 # Pricing       : $5 input, $25 output per 1M tokens
 # Thinking      : adaptive only; no budget_tokens, no sampling params; effort low~max (default high)
-# Access        : third-party proxy new-api.iohubonline.club -> Bedrock backend; token limited to Opus
+# Access        : third-party proxy new-api.iohubonline.club -> Bedrock backend; token can use all models on /v1/models (verified 2026-07-26)
 
 # Claude Code 使用 New API
 export ANTHROPIC_BASE_URL="https://new-api.iohubonline.club"
@@ -21,6 +21,7 @@ export ANTHROPIC_AUTH_TOKEN="<YOUR_ANTHROPIC_AUTH_TOKEN>"
 
 # Claude Code 默认模型
 # export ANTHROPIC_MODEL="claude-opus-4-8-thinking"
+# export ANTHROPIC_MODEL="claude-opus-5"
 export ANTHROPIC_MODEL="claude-fable-5"
 
 # 不发送实验性 anthropic-beta header (new-api/Bedrock 代理不支持，后端要求开启此开关)
