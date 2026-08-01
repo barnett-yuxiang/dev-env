@@ -26,9 +26,10 @@
 | 目录 | 说明 |
 |------|------|
 | [`chatgpt/`](tools/chatgpt/) | ChatGPT 个性化自定义指令 |
+| [`claude-code/`](tools/claude-code/) | Claude Code 个性化配置（CLAUDE.md、settings.json、hooks、MCP） |
+| [`cli/`](tools/cli/) | 命令行工具配置与技巧（`git.md`、`summarize.md`） |
 | [`codex/`](tools/codex/) | Codex 个性化自定义指令 |
 | [`cursor/`](tools/cursor/) | Cursor 模型偏好与 User Rules，含 MCP 配置 |
-| [`git-tool/`](tools/git-tool/) | Git 实用配置与技巧（别名、blame、log、签名等） |
 | [`assets/`](tools/assets/) | 文档截图资源 |
 
 ## 常用维护命令

@@ -8,20 +8,19 @@ export IOHUB_METABASE_USERNAME="<YOUR_IOHUB_METABASE_USERNAME>"
 export IOHUB_METABASE_PASSWORD="<YOUR_IOHUB_METABASE_PASSWORD>"
 export IOHUB_METABASE_ACCESS_CODE="<YOUR_IOHUB_METABASE_ACCESS_CODE>"
 
-# Claude Opus 4.8 key info
-# Model ID      : claude-opus-4-8-thinking
-# Context/Output: 1M / 128K (stream required when output > 16K)
-# Pricing       : $5 input, $25 output per 1M tokens
-# Thinking      : adaptive only; no budget_tokens, no sampling params; effort low~max (default high)
-# Access        : third-party proxy new-api.iohubonline.club -> Bedrock backend; token limited to Opus
-
 # Claude Code 使用 New API
 export ANTHROPIC_BASE_URL="https://new-api.iohubonline.club"
 export ANTHROPIC_AUTH_TOKEN="<YOUR_ANTHROPIC_AUTH_TOKEN>"
 
 # Claude Code 默认模型
+# -thinking 后缀是 new-api proxy 自定义的 alias，不是 Anthropic 官方 model ID
+# （官方只有 claude-opus-5，thinking 由 request 参数控制）；换回官方 endpoint 时要去掉后缀
+# export ANTHROPIC_MODEL="claude-fable-5"
+# export ANTHROPIC_MODEL="claude-fable-5-thinking"
+export ANTHROPIC_MODEL="claude-opus-5-thinking"
 # export ANTHROPIC_MODEL="claude-opus-4-8-thinking"
-export ANTHROPIC_MODEL="claude-fable-5"
+# export ANTHROPIC_MODEL="claude-opus-4-6-thinking"
+# export ANTHROPIC_MODEL="claude-sonnet-5-thinking"
 
 # 不发送实验性 anthropic-beta header (new-api/Bedrock 代理不支持，后端要求开启此开关)
 export CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS="1"
