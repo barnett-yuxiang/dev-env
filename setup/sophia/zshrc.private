@@ -21,9 +21,3 @@ export ANTHROPIC_MODEL="claude-opus-5-thinking"
 # export ANTHROPIC_MODEL="claude-opus-4-8-thinking"
 # export ANTHROPIC_MODEL="claude-opus-4-6-thinking"
 # export ANTHROPIC_MODEL="claude-sonnet-5-thinking"
-
-# 不发送实验性 anthropic-beta header (new-api/Bedrock 代理不支持，后端要求开启此开关)
-export CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS="1"
-
-# Claude Code 推理强度
-export CLAUDE_CODE_EFFORT_LEVEL="xhigh"

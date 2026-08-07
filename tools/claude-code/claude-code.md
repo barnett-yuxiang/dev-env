@@ -15,8 +15,9 @@ For terms that may be difficult to understand, add a concise Chinese explanation
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "theme": "auto",
-  "permissions": {
-    "defaultMode": "auto"
+  "effortLevel": "xhigh",
+  "env": {
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1"
   }
 }
 ```
