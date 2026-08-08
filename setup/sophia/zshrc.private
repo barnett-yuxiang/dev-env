@@ -14,8 +14,8 @@ export ANTHROPIC_AUTH_TOKEN="<YOUR_ANTHROPIC_AUTH_TOKEN>"
 
 # Claude Code 默认模型
 # -thinking 后缀是 new-api 自定义的 alias，代表默认开启思考模式，不是 Anthropic 官方 model ID
-# export ANTHROPIC_MODEL="claude-fable-5-thinking"
 # export ANTHROPIC_MODEL="claude-fable-5"
+# export ANTHROPIC_MODEL="claude-fable-5-thinking"
 # export ANTHROPIC_MODEL="claude-opus-5"
 export ANTHROPIC_MODEL="claude-opus-5-thinking"
 # export ANTHROPIC_MODEL="claude-opus-4-8-thinking"

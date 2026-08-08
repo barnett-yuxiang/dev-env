@@ -1,6 +1,6 @@
-# eilin · ghostty config
+# eilin - ghostty config
 #
-# Location: ~/Library/Application Support/com.mitchellh.ghostty/config.ghostty
+# Location: ~/.config/ghostty/config.ghostty
 
 # ---------- Font ----------
 
@@ -48,11 +48,11 @@ resize-overlay = after-first
 
 # ---------- Misc ----------
 
-# 每个 Terminal surface 最多约 100 MB scrollback
-scrollback-limit = 100000000
+# 每个 Terminal surface 最多约 50 MB scrollback
+scrollback-limit = 50000000
 
 # 左 Option 作为 Alt，右 Option 保留 macOS 原始行为
 macos-option-as-alt = left
 
-# 禁止终端程序通过 Escape Sequence 发送系统通知
-desktop-notifications = false
+# 允许终端程序通过 Escape Sequence 发送系统通知
+desktop-notifications = true

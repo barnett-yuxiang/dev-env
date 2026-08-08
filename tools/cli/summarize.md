@@ -1,11 +1,10 @@
-
-## Summarize
+# Summarize
 
 https://github.com/steipete/summarize
 
 Fast summaries from URLs, files, and media (YouTube, podcasts, PDFs, audio/video). Ships as a CLI + Chrome Side Panel extension.
 
-### Configuration
+## Configuration
 
 Config lives at `~/.summarize/config.json`, inspect with `summarize status`.
 
@@ -27,7 +26,7 @@ My current config (API key redacted):
 }
 ```
 
-### Chrome Extension
+## Chrome Extension
 
 Prompt override (my current config):
 

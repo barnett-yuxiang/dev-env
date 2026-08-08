@@ -1,189 +1,79 @@
-### Some Helpful Config Stuff
+# Git
 
-```
-$ git config --global alias.staash 'stash --all'
-```
+git + ssh
 
-```
-https://gist.github.com/schacon
-$ git config --global alias.bb !better-branch.sSh
-```
+## SSH
 
-```
-Conditional Configs
-
-[includeIf "gitdir:~/projects/work/"]
-path = ~/projects/work/.gitconfig
-[includeIf "gitdir:~/projects/oss/"]
-path = ~/projects/oss/.gitconfig
+```bash
+ssh-keygen -t ed25519 -C "<EMAIL>" -f ~/.ssh/id_ed25519_github
+ssh-keygen -t ed25519 -C "<EMAIL>" -f ~/.ssh/id_ed25519_codeup
 ```
 
-### Oldier But Goodies
+### `~/.ssh/config`
 
-```
-$ git blame -L
-  just blame a "L"ittle
-```
+```shell
+# GitHub
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_github
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    UseKeychain yes
 
-```
-git log -L 15,26:path/to/file
-```
+# Alibaba Cloud Codeup
+Host codeup.aliyun.com
+    HostName codeup.aliyun.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_codeup
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    UseKeychain yes
 
-```
-$ git blame -W
-  ignore whitespace
+# 阿里云 ECS（广州），托管个人主页
+Host website-guangzhou
+    HostName <PUBLIC_IP>
+    User root
+    IdentityFile ~/.ssh/sophia-ssh.pem
+    IdentitiesOnly yes
+    Port 22
+    ServerAliveInterval 60
+    ServerAliveCountMax 10
 
-$ git blame -w -C
-  ignore whitespace
-  and detect lines moved or copied in the same commit
-```
-
-```
-$ git log -S
-  the "pickaxe"
-
-git log -S files_watcher -p
-```
-
-```
-git diff --word-diff
-```
-
-```
-$ git config --global rerere.enabled true
-  REuse REcorded REsolution
-```
-
-### Some New Stuff You May Not Have Noticed
-
-```
-$ git branch --column
-
-git config --global column.ui auto
-git config --global branch.sort -committerdatce
+# 阿里云 ECS（马来西亚），OpenClaw 节点
+Host openclaw-malaysia
+    HostName <PUBLIC_IP>
+    User ecs-user
+    IdentityFile ~/.ssh/kamakura_claw-ssh.pem
+    IdentitiesOnly yes
+    Port 22
+    ServerAliveInterval 60
+    ServerAliveCountMax 10
 ```
 
-```
-$ git push --force-with-lease
+- `IdentitiesOnly yes`：只用指定的 key，避免 agent 里其它 key 抢先认证失败。
+- `AddKeysToAgent` / `UseKeychain`：macOS 专有，从钥匙串取 passphrase 并自动加入 agent。
+- `ServerAliveInterval 60`：远程主机保活，防止空闲断连。
+
+## 常用命令
+
+### 1. 清理仓库
+
+```bash
+# 看仓库占了多大
+git count-objects -vH
+
+# 打包松散对象、清掉不可达对象
+git gc
+
+# 更彻底（慢，偶尔跑一次就行）
+git gc --aggressive --prune=now
 ```
 
-![Image](./assets/screenshot-20250121-155410.png)
+### 2. 按更新时间列出分支
 
+```bash
+git for-each-ref --sort=-committerdate refs/heads/ refs/remotes/ \
+  --format='%(committerdate:relative)|%(refname:short)|%(authorname)|%(contents:subject)' \
+  | column -t -s'|'
 ```
-signing commits with ssh
-
-$ git config gpg.format ssh
-
-$ git config user.signingkey ~/.ssh/key.pub
-
-$ git cat-file -p HEAD
-```
-
-```
-$ git push --signed
-```
-
-```
-$ git maintainance start
-
-```
-![Image](./assets/screenshot-20250122-112540.png)
-
-```
-gc:                 disabled
-commit-graph:       hourly
-prefetch:           hourly
-loose-objects:      daily
-incremental-repack: daily
-pack-refs:          none
-```
-
-### Big Repo Stuff
-
-```
-Windows
-- approximately 3.5M files that results in a Git repo of about 300 gigabytes in size.
-- with 4,000 engineers producing 1,760 daily "lab builds" across 440 branches, plus thousands of pull request validation builds.
-```
-
-```
-Windows
-* VFS for Git
-* Scalar
-* Git
-```
-
-```
-prefetching
-```
-
-```
-commit-graph
-$ git config --global fetch.writeCommitGraph true
-
-linux, 1.2M commits
-(scott) > time git log --graph --oneline -10 > /dev/null // 9.89s
-and time git commit-graph write
-time git log --graph --oneline -10 > /dev/null // 0.01s
-```
-
-```
-filesystem monitor
-$ git config core.untrackedcache true
-$ git config core.fsmonitor true
-
-time git status
-chromium, 470k files
-```
-
-```
-partial cloning
-
-$ git clone https://github.com/torvalds/linux.git
-> git clone --filter=blob:none
-> git clone --filter=tree:0
-```
-
-```
-multipack indexes and
-reachability bitmaps and
-geometric repacking
-```
-
-### Monorepo Stuff
-
-```
-sparse-checkouts
-```
-![Image](./assets/screenshot-20250122-121432.png)
-
-### GitHub Stuff
-
-```
-allowed merge types
-```
-
-```
-auto merge
-```
-
-```
-merge queue
-```
-
-```
-refs/pull/*
-```
-
-```
-git ls-remote
-```
-
-### GitButler
-
-```
-gitbutler.com
-```
-
-Thank you! Be sure to let us buy you a beer at our drinkup tonight!
-Le Waff, 6p

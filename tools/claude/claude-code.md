@@ -1,3 +1,7 @@
+# Claude Code
+
+https://claude.com/download
+
 ## Personalization
 
 Custom instructions (`~/.claude/CLAUDE.md`)
