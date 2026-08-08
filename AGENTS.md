@@ -9,7 +9,6 @@
 
 - `setup/<环境名>/` — 各个环境的记录，涵盖 MacOS（`sophia`、`eilin`）、Windows 及其 WSL2（`lalalalisa`、`lalalalisa-wsl2`）、云服务器（`website-guangzhou`）、OpenClaw 环境（`barnettclaw`、`pmclaw`）。每个目录必有 `ENVIRONMENTS.md`，配置文件按需存放，可以没有。各环境配置有意不同，不要统一。
 - `tools/<工具名>/` — 跨环境的工具记录（AI 也属于工具的一种），主要是 Markdown，也有少量配置副本。这里的文件都是归档，不被任何程序加载。
-- `tools/assets/` — 文档引用的截图。
 
 ## Git
 

@@ -25,7 +25,6 @@
 | `zshrc.private` | 私有配置，例如 git 身份、Metabase 账号、Claude Code 令牌等敏感环境变量 |
 | `zshenv` | 所有 zsh 会话都会加载的环境变量配置（加载 Cargo 环境） |
 | `zprofile` | login shell 初始化配置，例如 Homebrew PATH、JetBrains Toolbox |
-| `ssh_config` | SSH 主机别名和连接配置 |
 | `config.ghostty` | Ghostty 终端模拟器配置（字体、主题、窗口、滚动等） |
 
 ## Shell 环境
@@ -101,7 +100,7 @@
 |------|------|
 | `github.com` | GitHub（`id_ed25519_github`） |
 | `codeup.aliyun.com` | 阿里云 Codeup（`id_ed25519_codeup`） |
-| `aliyun-ecs` | 阿里云 ECS，`root` 登录 |
-| `openclaw-malaysia` | 马来西亚节点，`ecs-user` 登录 |
+| `website-guangzhou` | 阿里云 ECS（广州），`root` 登录 |
+| `openclaw-malaysia` | 阿里云 ECS（马来西亚），`ecs-user` 登录 |
 
-所有主机均启用 `IdentitiesOnly`；远程主机设置 `ServerAliveInterval 60` 保活。
+所有主机均启用 `IdentitiesOnly`；远程主机设置 `ServerAliveInterval 60` 保活。完整的 `~/.ssh/config` 见 [tools/cli/git.md](../../tools/cli/git.md)。

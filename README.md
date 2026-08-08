@@ -14,7 +14,7 @@
 | 设备 | 平台 | 说明 |
 |------|------|------|
 | [`eilin/`](setup/eilin/) | macOS (Apple Silicon) | 原生 zsh 配置（无 oh-my-zsh），见 `zshrc`、`zshrc.private`、`config.ghostty` |
-| [`sophia/`](setup/sophia/) | macOS (Apple Silicon) | oh-my-zsh + Powerlevel10k，见 `zshrc`、`zshenv`、`zprofile`、`ssh_config`、`config.ghostty` |
+| [`sophia/`](setup/sophia/) | macOS (Apple Silicon) | oh-my-zsh + Powerlevel10k，见 `zshrc`、`zshenv`、`zprofile`、`config.ghostty` |
 | [`barnettclaw/`](setup/barnettclaw/) | Linux | Barnett 的 OpenClaw（搭建中），含现代 CLI 工具链安装说明 |
 | [`lalalalisa/`](setup/lalalalisa/) | Windows 11 (HP) | Windows 宿主机，日常开发在其 WSL2 中进行 |
 | [`lalalalisa-wsl2/`](setup/lalalalisa-wsl2/) | WSL2 (Ubuntu 24) | bash 配置（`bashrc`），含 pyenv、nvm、fzf，及现代 CLI 工具链 |
@@ -25,12 +25,10 @@
 
 | 目录 | 说明 |
 |------|------|
-| [`chatgpt/`](tools/chatgpt/) | ChatGPT 个性化自定义指令 |
+| [`chatgpt/`](tools/chatgpt/) | ChatGPT 个性化自定义指令（`chatgpt-web.md` 网页版、`chatgpt-desktop.md` 桌面版含 Codex） |
 | [`claude-code/`](tools/claude-code/) | Claude Code 个性化配置（CLAUDE.md、settings.json、hooks、MCP） |
-| [`cli/`](tools/cli/) | 命令行工具配置与技巧（`git.md`、`summarize.md`） |
-| [`codex/`](tools/codex/) | Codex 个性化自定义指令 |
+| [`cli/`](tools/cli/) | 命令行工具配置与技巧（`git.md` 含 SSH 配置、`summarize.md`） |
 | [`cursor/`](tools/cursor/) | Cursor 模型偏好与 User Rules，含 MCP 配置 |
-| [`assets/`](tools/assets/) | 文档截图资源 |
 
 ## 常用维护命令
 
