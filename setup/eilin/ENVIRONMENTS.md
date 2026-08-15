@@ -17,7 +17,7 @@
 | 用途 | 个人开发机 |
 | 主要用户 | eilin |
 | 包管理器 | Homebrew（`/opt/homebrew`） |
-| 配置版本 | Native zsh config v0.0.10 |
+| 配置版本 | Native zsh config v0.1.0 |
 
 ## 包含配置文件
 
@@ -25,6 +25,7 @@
 |------|------|
 | `zshrc` | 原生 zsh 主配置，包含历史、补全、Git 提示符、别名、函数和各语言开发环境初始化 |
 | `zshrc.private` | 私有配置，例如 git 身份、Metabase 账号、Claude Code 令牌等敏感环境变量（建议 `chmod 600`） |
+| `config.ghostty` | Ghostty 终端模拟器配置（字体、主题、窗口、滚动等） |
 
 ## Shell 环境
 

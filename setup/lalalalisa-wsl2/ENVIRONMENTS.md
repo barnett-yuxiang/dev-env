@@ -8,7 +8,7 @@
 sudo apt install ripgrep jq fzf eza bat fd-find
 ```
 
-这五个是现代 CLI 工具链的标配：`rg`、`fd`、`eza`、`bat` 分别替代 `grep`、`find`、`ls`、`cat`，`jq` 和 `fzf` 则填补原生 shell 的空白。
+这六个是现代 CLI 工具链的标配：`rg`、`fd`、`eza`、`bat` 分别替代 `grep`、`find`、`ls`、`cat`，`jq` 和 `fzf` 则填补原生 shell 的空白。
 
 | 工具 | 作用 |
 |------|------|
