@@ -40,6 +40,11 @@ https://claude.com/download
         "anthropicFamilyTier": "sonnet"
       }
     ]
+  },
+  "workspace": {
+    "allowedEgressHosts": [
+      "*"
+    ]
   }
 }
 ```
