@@ -2,6 +2,48 @@
 
 https://claude.com/download
 
+## Claude Desktop 3P
+
+```json
+{
+  "$schemaVersion": 2,
+  "inference": {
+    "provider": "gateway",
+    "baseUrl": "https://new-api.iohubonline.club",
+    "credential": {
+      "kind": "static",
+      "apiKey": "<YOUR_API_KEY>"
+    }
+  },
+  "models": {
+    "list": [
+      {
+        "name": "claude-opus-5",
+        "labelOverride": "Claude Opus 5",
+        "supports1m": true,
+        "prefer1m": true,
+        "anthropicFamilyTier": "opus",
+        "isFamilyDefault": true
+      },
+      {
+        "name": "claude-fable-5",
+        "labelOverride": "Claude Fable 5",
+        "supports1m": true,
+        "prefer1m": true,
+        "anthropicFamilyTier": "fable"
+      },
+      {
+        "name": "claude-sonnet-5",
+        "labelOverride": "Claude Sonnet 5",
+        "supports1m": true,
+        "prefer1m": true,
+        "anthropicFamilyTier": "sonnet"
+      }
+    ]
+  }
+}
+```
+
 ## Personalization
 
 Custom instructions (`~/.claude/CLAUDE.md`)
