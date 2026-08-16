@@ -29,23 +29,32 @@
 
 ## Shell 环境
 
-不使用框架，全部基于原生 zsh 手动配置。加载顺序为：基础功能 → 私有变量 → Homebrew override → 别名与函数 → 语言环境 → 最后加载插件。
+不使用框架，全部基于原生 zsh 手动配置。加载顺序为：PATH → 语言环境 → `compinit` → 依赖 `compinit` 的配置 → 私有变量 → 最后加载插件。Homebrew 自身的 PATH 由 `~/.zprofile` 的 `brew shellenv` 注入。
 
 ### 基础配置
 
 | 项目 | 说明 |
 |------|------|
-| 历史 | `HISTFILE=~/.zsh_history`，`HISTSIZE`/`SAVEHIST=10000`，`SHARE_HISTORY`、`HIST_IGNORE_DUPS` |
-| 补全 | 原生 `compinit` + `zstyle menu select` 菜单选择 |
-| fzf | 通过 `source <(fzf --zsh)` 加载 shell 集成 |
-| Git 提示符 | 原生 `vcs_info`：`+` 表示已暂存、`*` 表示未暂存改动，提示符形如 `%n@%m %1~ [branch]` |
+| 去重 | `typeset -U path PATH fpath FPATH`，避免重复 source 时 PATH 累积 |
+| 历史 | `HISTFILE=~/.zsh_history`，`HISTSIZE`/`SAVEHIST=50000`，`SHARE_HISTORY`、`EXTENDED_HISTORY`、`HIST_IGNORE_ALL_DUPS`、`HIST_REDUCE_BLANKS` |
+| 补全 | 原生 `compinit` + `zstyle menu select` 菜单选择；`bashcompinit` 用于加载 nvm 的 bash 补全 |
+| fzf | 通过 `source <(fzf --zsh)` 加载 shell 集成（Ctrl-R / Ctrl-T / Option-C） |
+| 键位 | 上下方向键绑定 `up/down-line-or-beginning-search`，按已输入前缀过滤历史 |
+| Git 提示符 | 原生 `vcs_info`：`+` 表示已暂存、`*` 表示未暂存改动，提示符形如 `%n@%m %1~ (branch*+)`（git 部分为黄色）；rebase/merge 等操作中显示为 `(branch\|action)` |
+
+### 额外 PATH 条目
+
+| 路径 | 说明 |
+|------|------|
+| `~/repo_projects/github/toolkit/dev-garage` | 常用 shell 脚本与命令行工具 |
+| `~/.local/bin` | 用户级安装的命令行工具 |
+| `~/bin` | 个人脚本与二进制（`yt-dlp_macos`、AOSP `repo` 等） |
 
 ### zsh 插件（从 Homebrew 加载）
 
 | 插件 | 作用 |
 |------|------|
 | `zsh-autosuggestions` | 基于历史的命令自动建议 |
-| `zsh-history-substring-search` | 历史命令子串搜索（已绑定上下方向键） |
 | `zsh-syntax-highlighting` | 命令行语法高亮（保持为最后加载） |
 
 ### 常用别名与函数
@@ -59,6 +68,8 @@
 | `update-gitconfig-default-branch` | 全局默认分支设为 `main` |
 | `update-gitconfig-color-ui` | 开启 git `color.ui` |
 | `update-gitconfig-autocrlf-input` | 全局 `core.autocrlf` 设为 `input` |
+| `update-gitconfig-quotepath-false` | 全局 `core.quotepath` 设为 `false` |
+| `update-gitconfig-all` | 依次执行上述全部 gitconfig 设置 |
 | `ggitcfg_check` | 打印全局 git 配置 |
 
 ## 已安装工具链
@@ -82,13 +93,13 @@
 
 | 语言 / 工具 | 说明 |
 |------|------|
-| Go | `GOPATH=$HOME/go`、`GO111MODULE=on` |
-| Python（`pyenv` / `pyenv-virtualenv`） | 版本与虚拟环境管理（`poetry` / `uv` 已在注释中备用） |
-| Node（`nvm`） | Node.js 版本管理（`pnpm` / `bun` 已在注释中备用） |
+| Go | go1.25.12 darwin/arm64，`GOPATH=$HOME/go`，`$GOPATH/bin` 加入 PATH |
+| Python（`pyenv`） | pyenv 由 Homebrew 安装，`PYENV_ROOT=$HOME/.pyenv`，通过 `pyenv init - zsh` 初始化 |
+| Node（`nvm`） | `NVM_DIR=$HOME/.nvm`，补全由 `bashcompinit` + `$NVM_DIR/bash_completion` 提供 |
 
 ### Homebrew keg-only 依赖
 
-在 `zshrc` 中为编译显式导出 `PATH` / `LDFLAGS` / `CPPFLAGS` / `PKG_CONFIG_PATH`：`curl`、`sqlite`、`zlib`。
+在 `zshrc` 中为编译显式导出 `PATH` / `LDFLAGS` / `CPPFLAGS` / `PKG_CONFIG_PATH`：`curl`、`sqlite`、`zlib`、`tcl-tk@8`。
 
 Python 构建依赖：`openssl@3`、`readline`、`sqlite3`、`xz`、`tcl-tk@8`、`libb2`、`zstd`、`zlib`、`pkgconfig`。
 
