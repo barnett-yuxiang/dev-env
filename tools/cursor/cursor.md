@@ -1,3 +1,5 @@
+# Cursor
+
 ## Models
 - claude-4.6-sonnet (thinking)
 - gemini-3.1

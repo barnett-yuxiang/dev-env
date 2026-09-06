@@ -26,7 +26,7 @@
 | 目录 | 说明 |
 |------|------|
 | [`chatgpt/`](tools/chatgpt/) | ChatGPT 个性化自定义指令（`chatgpt-web.md` 网页版、`chatgpt-desktop.md` 桌面版含 Codex） |
-| [`claude-code/`](tools/claude-code/) | Claude Code 个性化配置（CLAUDE.md、settings.json、hooks、MCP） |
+| [`claude/`](tools/claude/) | Claude Code 个性化配置（CLAUDE.md、settings.json、hooks、MCP） |
 | [`cli/`](tools/cli/) | 命令行工具配置与技巧（`git.md` 含 SSH 配置、`summarize.md`） |
 | [`cursor/`](tools/cursor/) | Cursor 模型偏好与 User Rules，含 MCP 配置 |
 
