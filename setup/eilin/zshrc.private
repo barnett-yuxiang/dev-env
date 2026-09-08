@@ -8,17 +8,26 @@ export IOHUB_METABASE_USERNAME="<YOUR_IOHUB_METABASE_USERNAME>"
 export IOHUB_METABASE_PASSWORD="<YOUR_IOHUB_METABASE_PASSWORD>"
 export IOHUB_METABASE_ACCESS_CODE="<YOUR_IOHUB_METABASE_ACCESS_CODE>"
 
+# iohub swagger 后端接口文档 HTTP Basic Auth
+export IOHUB_SWAGGER_URL="https://test-app.iohubonline.club"
+export IOHUB_SWAGGER_USERNAME="<YOUR_IOHUB_SWAGGER_USERNAME>"
+export IOHUB_SWAGGER_PASSWORD="<YOUR_IOHUB_SWAGGER_PASSWORD>"
+
 # Claude Code 使用 New API
 export ANTHROPIC_BASE_URL="https://new-api.iohubonline.club"
 export ANTHROPIC_AUTH_TOKEN="<YOUR_ANTHROPIC_AUTH_TOKEN>"
 
-# Claude Code 默认模型
+export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
+
+# Claude Code 可用模型列表
 # -thinking 后缀是 new-api 自定义的 alias，代表默认开启思考模式，不是 Anthropic 官方 model ID
-# export ANTHROPIC_MODEL="claude-fable-5"
+# [1m] 后缀是 Claude Code 自己的约定：请求 1M context（加 beta header），不加默认 200K
+# export ANTHROPIC_MODEL="claude-fable-5-1"
 # export ANTHROPIC_MODEL="claude-fable-5-thinking"
-# export ANTHROPIC_MODEL="claude-opus-5"
+# export ANTHROPIC_MODEL="claude-fable-5"
+export ANTHROPIC_MODEL="claude-opus-5[1m]"
 # export ANTHROPIC_MODEL="claude-opus-5-thinking"
-# export ANTHROPIC_MODEL="claude-opus-4-8"
 # export ANTHROPIC_MODEL="claude-opus-4-8-thinking"
-# export ANTHROPIC_MODEL="claude-sonnet-5"
+# export ANTHROPIC_MODEL="claude-opus-4-8"
 # export ANTHROPIC_MODEL="claude-sonnet-5-thinking"
+# export ANTHROPIC_MODEL="claude-sonnet-5"
