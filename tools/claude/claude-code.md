@@ -15,8 +15,18 @@ https://claude.com/download
       "apiKey": "<YOUR_API_KEY>"
     }
   },
+  "chatSurface": {
+    "enabled": false
+  },
   "models": {
     "list": [
+      {
+        "name": "claude-opus-4-8",
+        "labelOverride": "Claude Opus 4.8",
+        "supports1m": true,
+        "prefer1m": true,
+        "anthropicFamilyTier": "opus"
+      },
       {
         "name": "claude-opus-5",
         "labelOverride": "Claude Opus 5",
@@ -26,25 +36,54 @@ https://claude.com/download
         "isFamilyDefault": true
       },
       {
-        "name": "claude-fable-5",
-        "labelOverride": "Claude Fable 5",
-        "supports1m": true,
-        "prefer1m": true,
-        "anthropicFamilyTier": "fable"
-      },
-      {
         "name": "claude-sonnet-5",
         "labelOverride": "Claude Sonnet 5",
         "supports1m": true,
         "prefer1m": true,
-        "anthropicFamilyTier": "sonnet"
+        "anthropicFamilyTier": "sonnet",
+        "isFamilyDefault": true
+      },
+      {
+        "name": "claude-fable-5",
+        "labelOverride": "Claude Fable 5",
+        "supports1m": true,
+        "prefer1m": true,
+        "anthropicFamilyTier": "fable",
+        "isFamilyDefault": false,
+        "maxEffort": "max"
+      },
+      {
+        "name": "claude-fable-5-1",
+        "labelOverride": "Claude Fable 5.1",
+        "supports1m": true,
+        "prefer1m": true,
+        "anthropicFamilyTier": "fable",
+        "isFamilyDefault": true,
+        "maxEffort": "max"
+      }
+    ]
+  },
+  "mcp": {
+    "managedServers": [
+      {
+        "name": "Web search",
+        "headers": {
+          "X-Subscription-Token": "<YOUR_BRAVE_APP_KEY>"
+        },
+        "server": "websearch",
+        "provider": "brave",
+        "toolPolicy": {
+          "web_search": "allow"
+        }
       }
     ]
   },
   "workspace": {
+    "skipWebFetchPreflight": true,
     "allowedEgressHosts": [
       "*"
-    ]
+    ],
+    "userContentRendererUrl": "<YOUR_RENDERER_URL>"
   }
 }
 ```
