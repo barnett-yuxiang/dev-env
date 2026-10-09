@@ -25,5 +25,4 @@ export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
 # 以 new-api /v1/models 为准（2026-09-28）
 # export ANTHROPIC_MODEL="claude-fable-5-1"
 export ANTHROPIC_MODEL="claude-opus-5-5[1m]"
-# export ANTHROPIC_MODEL="claude-sonnet-5-thinking"
-# export ANTHROPIC_MODEL="claude-sonnet-5"
+# export ANTHROPIC_MODEL="claude-sonnet-5-5"
