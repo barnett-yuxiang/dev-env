@@ -1,4 +1,4 @@
-# sophia - native zsh config v0.1.0
+# sophia - native zsh config v0.2.0
 
 # Prerequisites:
 #   brew install curl wget git
@@ -139,6 +139,12 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
+
+# Drop '/' from WORDCHARS so word motions stop at each path segment.
+# Ghostty sends ESC f for Option+Right, and zsh-autosuggestions treats forward-word as a partial accept:
+# Right takes the whole suggestion, Option+Right takes one word / path segment.
+# Side effect: Option+Left, Option+Backspace and Ctrl-W also work per path segment.
+WORDCHARS=${WORDCHARS//\/}
 
 # }} Key Bindings
 
