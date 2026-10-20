@@ -16,6 +16,7 @@
 | 用途 | 个人开发机 |
 | 主要用户 | sophia |
 | 包管理器 | Homebrew（`/opt/homebrew`） |
+| 配置版本 | Native zsh config v0.2.0 |
 
 ## 包含配置文件
 
@@ -42,6 +43,10 @@
 | `zsh-completions` | 补充第三方命令补全 |
 | `zsh-syntax-highlighting` | 命令行语法高亮 |
 | `zsh-history-substring-search` | 历史命令子串搜索 |
+
+### 键位
+
+`WORDCHARS` 去掉 `/`，Option+←/→、Ctrl-W 按路径段移动或删除，Option+→ 逐段接受 autosuggestion（→ 接受整条）。
 
 ### 常用别名与函数
 
