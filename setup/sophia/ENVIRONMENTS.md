@@ -11,11 +11,12 @@
 | 机型 | MacBook Air (M3) |
 | 芯片 | Apple M3 |
 | 内存 | 24 GB |
-| 系统 | macOS 26.5.2 |
+| 系统 | macOS 26.7.1 |
 | 架构 | Apple Silicon (arm64) |
 | 用途 | 个人开发机 |
 | 主要用户 | sophia |
 | 包管理器 | Homebrew（`/opt/homebrew`） |
+| 配置版本 | Native zsh config v0.2.0 |
 
 ## 包含配置文件
 
@@ -24,7 +25,7 @@
 | `zshrc` | zsh 主配置，包含 oh-my-zsh、主题、插件、别名、函数和各语言开发环境初始化 |
 | `zshrc.private` | 私有配置，例如 git 身份、Metabase 账号、Claude Code 令牌等敏感环境变量 |
 | `zshenv` | 所有 zsh 会话都会加载的环境变量配置（加载 Cargo 环境） |
-| `zprofile` | login shell 初始化配置，例如 Homebrew PATH、JetBrains Toolbox |
+| `zprofile` | login shell 初始化配置（Homebrew `shellenv`） |
 | `config.ghostty` | Ghostty 终端模拟器配置（字体、主题、窗口、滚动等） |
 
 ## Shell 环境
@@ -42,6 +43,10 @@
 | `zsh-completions` | 补充第三方命令补全 |
 | `zsh-syntax-highlighting` | 命令行语法高亮 |
 | `zsh-history-substring-search` | 历史命令子串搜索 |
+
+### 键位
+
+`WORDCHARS` 去掉 `/`，Option+←/→、Ctrl-W 按路径段移动或删除，Option+→ 逐段接受 autosuggestion（→ 接受整条）。
 
 ### 常用别名与函数
 
@@ -79,7 +84,6 @@
 |------|------|
 | `dev-garage` | 常用脚本与命令行工具集，已加入 `PATH`（[barnett-yuxiang/dev-garage](https://github.com/barnett-yuxiang/dev-garage)） |
 | Docker Desktop | 提供 Docker CLI 补全 |
-| JetBrains Toolbox | 通过 `zprofile` 加入脚本 `PATH` |
 
 ## 终端模拟器（Ghostty）
 

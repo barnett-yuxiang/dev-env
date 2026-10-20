@@ -17,7 +17,7 @@
 | 用途 | 个人开发机 |
 | 主要用户 | eilin |
 | 包管理器 | Homebrew（`/opt/homebrew`） |
-| 配置版本 | Native zsh config v0.1.0 |
+| 配置版本 | Native zsh config v0.2.0 |
 
 ## 包含配置文件
 
@@ -39,7 +39,7 @@
 | 历史 | `HISTFILE=~/.zsh_history`，`HISTSIZE`/`SAVEHIST=50000`，`SHARE_HISTORY`、`EXTENDED_HISTORY`、`HIST_IGNORE_ALL_DUPS`、`HIST_REDUCE_BLANKS` |
 | 补全 | 原生 `compinit` + `zstyle menu select` 菜单选择；`bashcompinit` 用于加载 nvm 的 bash 补全 |
 | fzf | 通过 `source <(fzf --zsh)` 加载 shell 集成（Ctrl-R / Ctrl-T / Option-C） |
-| 键位 | 上下方向键绑定 `up/down-line-or-beginning-search`，按已输入前缀过滤历史 |
+| 键位 | 上下方向键绑定 `up/down-line-or-beginning-search`，按已输入前缀过滤历史；`WORDCHARS` 去掉 `/`，Option+←/→、Ctrl-W 按路径段移动或删除，Option+→ 逐段接受 autosuggestion（→ 接受整条） |
 | Git 提示符 | 原生 `vcs_info`：`+` 表示已暂存、`*` 表示未暂存改动，提示符形如 `%n@%m %1~ (branch*+)`（git 部分为黄色）；rebase/merge 等操作中显示为 `(branch\|action)` |
 
 ### 额外 PATH 条目
