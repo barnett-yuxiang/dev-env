@@ -48,20 +48,9 @@
 
 `WORDCHARS` 去掉 `/`，Option+←/→、Ctrl-W 按路径段移动或删除，Option+→ 逐段接受 autosuggestion（→ 接受整条）。
 
-### 常用别名与函数
-
-| 名称 | 作用 |
-|------|------|
-| `ll` / `la` / `l` | `ls` 的常用列表变体 |
-| `update-gitconfig-github` | 用私有变量写入全局 git 用户名与邮箱 |
-| `update-gitconfig-editor-vim` | 全局 git 编辑器设为 vim |
-| `update-gitconfig-default-branch` | 全局默认分支设为 `main` |
-| `update-gitconfig-color-ui` | 开启 git `color.ui` |
-| `ggitcfg_check` | 打印全局 git 配置 |
-
 ## 已安装工具链
 
-### 语言与版本管理
+### 语言环境
 
 | 语言 / 工具 | 说明 |
 |------|------|
@@ -74,16 +63,21 @@
 | Ruby（`rbenv`） | Ruby 版本管理 |
 | Java / Android SDK | `ANDROID_HOME` 及 platform-tools、cmdline-tools |
 
-### Homebrew keg-only 依赖
+### AI CLI
 
-在 `zshrc` 中为编译显式导出 `PATH` / `LDFLAGS` / `CPPFLAGS` / `PKG_CONFIG_PATH`：`curl`、`sqlite`、`zlib`。
+| 工具 | 说明 |
+|------|------|
+| `claude` | Claude Code |
+| `copilot` | GitHub Copilot CLI |
+| `pi` | pi coding agent |
 
-### 其他工具
+### 其他
 
 | 工具 | 作用 |
 |------|------|
 | `dev-garage` | 常用脚本与命令行工具集，已加入 `PATH`（[barnett-yuxiang/dev-garage](https://github.com/barnett-yuxiang/dev-garage)） |
 | Docker Desktop | 提供 Docker CLI 补全 |
+| Homebrew keg-only 依赖 | `curl`、`sqlite`、`zlib`，在 `zshrc` 中为编译导出 `PATH` / `LDFLAGS` / `CPPFLAGS` / `PKG_CONFIG_PATH` |
 
 ## 终端模拟器（Ghostty）
 
