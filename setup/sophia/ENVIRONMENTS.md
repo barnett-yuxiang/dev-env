@@ -83,7 +83,7 @@
 
 | 配置项 | 值 |
 |------|-----|
-| 字体 | JetBrainsMono Nerd Font Mono，13pt，`font-thicken` |
+| 字体 | MesloLGS Nerd Font Mono，13pt，`font-thicken` |
 | 主题 | Catppuccin Mocha（固定暗色） |
 | 标题栏 | `macos-titlebar-style = tabs` |
 | 初始窗口 | 168 列 × 48 行 |
