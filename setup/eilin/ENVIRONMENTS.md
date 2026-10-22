@@ -17,7 +17,7 @@
 | 用途 | 个人开发机 |
 | 主要用户 | eilin |
 | 包管理器 | Homebrew（`/opt/homebrew`） |
-| 配置版本 | Native zsh config v0.2.0 |
+| 配置版本 | Native zsh config v0.2.1 |
 
 ## 包含配置文件
 
@@ -30,17 +30,6 @@
 ## Shell 环境
 
 不使用框架，全部基于原生 zsh 手动配置。加载顺序为：PATH → 语言环境 → `compinit` → 依赖 `compinit` 的配置 → 私有变量 → 最后加载插件。Homebrew 自身的 PATH 由 `~/.zprofile` 的 `brew shellenv` 注入。
-
-### 基础配置
-
-| 项目 | 说明 |
-|------|------|
-| 去重 | `typeset -U path PATH fpath FPATH`，避免重复 source 时 PATH 累积 |
-| 历史 | `HISTFILE=~/.zsh_history`，`HISTSIZE`/`SAVEHIST=50000`，`SHARE_HISTORY`、`EXTENDED_HISTORY`、`HIST_IGNORE_ALL_DUPS`、`HIST_REDUCE_BLANKS` |
-| 补全 | 原生 `compinit` + `zstyle menu select` 菜单选择；`bashcompinit` 用于加载 nvm 的 bash 补全 |
-| fzf | 通过 `source <(fzf --zsh)` 加载 shell 集成（Ctrl-R / Ctrl-T / Option-C） |
-| 键位 | 上下方向键绑定 `up/down-line-or-beginning-search`，按已输入前缀过滤历史；`WORDCHARS` 去掉 `/`，Option+←/→、Ctrl-W 按路径段移动或删除，Option+→ 逐段接受 autosuggestion（→ 接受整条） |
-| Git 提示符 | 原生 `vcs_info`：`+` 表示已暂存、`*` 表示未暂存改动，提示符形如 `%n@%m %1~ (branch*+)`（git 部分为黄色）；rebase/merge 等操作中显示为 `(branch\|action)` |
 
 ### 额外 PATH 条目
 
@@ -56,21 +45,6 @@
 |------|------|
 | `zsh-autosuggestions` | 基于历史的命令自动建议 |
 | `zsh-syntax-highlighting` | 命令行语法高亮（保持为最后加载） |
-
-### 常用别名与函数
-
-| 名称 | 作用 |
-|------|------|
-| `ll` / `la` / `l` | 原生 `ls` 的常用列表变体 |
-| `ell` / `ela` / `el` | 基于 `eza` 的增强列表（`--git`、目录优先） |
-| `update-gitconfig-user` | 用私有变量写入全局 git 用户名与邮箱 |
-| `update-gitconfig-editor-vim` | 全局 git 编辑器设为 vim |
-| `update-gitconfig-default-branch` | 全局默认分支设为 `main` |
-| `update-gitconfig-color-ui` | 开启 git `color.ui` |
-| `update-gitconfig-autocrlf-input` | 全局 `core.autocrlf` 设为 `input` |
-| `update-gitconfig-quotepath-false` | 全局 `core.quotepath` 设为 `false` |
-| `update-gitconfig-all` | 依次执行上述全部 gitconfig 设置 |
-| `ggitcfg_check` | 打印全局 git 配置 |
 
 ## 已安装工具链
 
