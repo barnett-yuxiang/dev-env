@@ -16,7 +16,7 @@
 | 用途 | 个人开发机 |
 | 主要用户 | sophia |
 | 包管理器 | Homebrew（`/opt/homebrew`） |
-| 配置版本 | Native zsh config v0.2.0 |
+| 配置版本 | Native zsh config v0.2.1 |
 
 ## 包含配置文件
 
