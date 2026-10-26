@@ -51,4 +51,14 @@
 | `codex` | OpenAI Codex CLI |
 | `copilot` | GitHub Copilot CLI |
 | `pi` | pi coding agent |
-| `lark-cli` | 飞书官方 CLI（npm 全局安装），配合 `lark-*` skills 供 AI agent 调用 |
+| `lark-cli` | 飞书官方 CLI（npm 全局安装），供 `lark-*` skills 调用 |
+
+### Agent Skills
+
+通过 `npx skills`（[vercel-labs/skills](https://github.com/vercel-labs/skills)）全局安装到 `~/.agents/skills`，安装记录在 `~/.agents/.skill-lock.json`。
+
+| Skill | 来源 | 说明 |
+|------|------|------|
+| `lark-*` | 飞书开放平台（`open.feishu.cn`） | 飞书各业务域（IM、文档、日历、多维表格等），依赖 `lark-cli`；已软链到 `~/.claude/skills`、`~/.pi/agent/skills` |
+| `humanizer` | [blader/humanizer](https://github.com/blader/humanizer) | 改写文本中的 AI 写作痕迹 |
+| `find-skills` | [vercel-labs/skills](https://github.com/vercel-labs/skills) | 搜索、安装 skill |
