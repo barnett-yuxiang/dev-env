@@ -51,14 +51,19 @@
 | `codex` | OpenAI Codex CLI |
 | `copilot` | GitHub Copilot CLI |
 | `pi` | pi coding agent |
-| `lark-cli` | 飞书官方 CLI（npm 全局安装），供 `lark-*` skills 调用 |
 
 ### Agent Skills
 
-通过 `npx skills`（[vercel-labs/skills](https://github.com/vercel-labs/skills)）全局安装到 `~/.agents/skills`，安装记录在 `~/.agents/.skill-lock.json`。
+统一用 `npx skills`（[vercel-labs/skills](https://github.com/vercel-labs/skills)）管理。全局安装在 `~/.agents/skills`，安装记录在 `~/.agents/.skill-lock.json`：
 
 | Skill | 来源 | 说明 |
 |------|------|------|
-| `lark-*` | 飞书开放平台（`open.feishu.cn`） | 飞书各业务域（IM、文档、日历、多维表格等），依赖 `lark-cli`；已软链到 `~/.claude/skills`、`~/.pi/agent/skills` |
+| `lark-*` | 飞书开放平台（`open.feishu.cn`） | 飞书各业务域（IM、文档、日历、多维表格等），已软链到 `~/.claude/skills`、`~/.pi/agent/skills`；依赖 `lark-cli`（飞书官方 CLI，npm 全局安装 `@larksuite/cli`） |
 | `humanizer` | [blader/humanizer](https://github.com/blader/humanizer) | 改写文本中的 AI 写作痕迹 |
 | `find-skills` | [vercel-labs/skills](https://github.com/vercel-labs/skills) | 搜索、安装 skill |
+
+项目级安装（`--project`）放在项目内的 `.agents/skills`，锁文件 `skills-lock.json` 随项目仓库提交：
+
+| 项目 | 来源 | 说明 |
+|------|------|------|
+| `talk-with-ai` | [mattpocock/skills](https://github.com/mattpocock/skills) | engineering / productivity 类 skills（`tdd`、`code-review`、`triage` 等），软链到项目 `.claude/skills`；`make skills-update` 更新 |
