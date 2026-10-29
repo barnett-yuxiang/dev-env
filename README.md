@@ -13,7 +13,7 @@
 
 | 设备 | 平台 | 说明 |
 |------|------|------|
-| [`eilin/`](setup/eilin/) | macOS (Apple Silicon) | 原生 zsh 配置（无 oh-my-zsh），见 `zshrc`、`zshrc.private`、`config.ghostty` |
+| [`eilin/`](setup/eilin/) | macOS (Apple Silicon) | 原生 zsh 配置（无 oh-my-zsh），见 `zshrc`、`zshrc.private`、`zprofile`、`config.ghostty` |
 | [`sophia/`](setup/sophia/) | macOS (Apple Silicon) | oh-my-zsh + Powerlevel10k，见 `zshrc`、`zshenv`、`zprofile`、`config.ghostty` |
 | [`barnettclaw/`](setup/barnettclaw/) | Linux | Barnett 的 OpenClaw（搭建中），含现代 CLI 工具链安装说明 |
 | [`lalalalisa/`](setup/lalalalisa/) | Windows 11 (HP) | Windows 宿主机，日常开发在其 WSL2 中进行 |

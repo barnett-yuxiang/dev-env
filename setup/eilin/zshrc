@@ -1,4 +1,4 @@
-# eilin - native zsh config v0.2.0
+# eilin - native zsh config v0.2.1
 
 # Prerequisites:
 #   brew install curl wget git
@@ -162,7 +162,8 @@ zstyle ':vcs_info:git:*' actionformats ' (%b|%a%u%c)'
 
 add-zsh-hook precmd vcs_info
 setopt PROMPT_SUBST
-PROMPT='%n@%m %1~%F{yellow}${vcs_info_msg_0_}%f %# '
+# user@host in Catppuccin Mocha truecolor (matches the Ghostty theme): Mauve, Overlay 0, Blue.
+PROMPT='%F{#cba6f7}%n%F{#6c7086}@%F{#89b4fa}%m%f %1~%F{yellow}${vcs_info_msg_0_}%f %# '
 
 # }} Prompt
 
