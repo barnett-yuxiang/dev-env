@@ -13,5 +13,6 @@
 ## Git
 
 - 用中文写 commit message。
-- **不要自动推送**，只输出 commit message 供用户手动复制和提交。
-- 不做 `git add`、`git commit`、`git push` 等操作，仅生成 commit log 文本。
+- **不要自动推送**，`git push` 始终由用户手动执行。
+- 默认不做 `git add`、`git commit` 等操作，只输出 commit message 供用户手动复制和提交。
+- 例外：用户明确主动下令提交（如「提交一下」「commit」）时，才可以执行 `git add` 和 `git commit`；该授权只对当次指令有效。
