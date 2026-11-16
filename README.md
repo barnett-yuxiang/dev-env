@@ -15,10 +15,9 @@
 |------|------|------|
 | [`eilin/`](setup/eilin/) | macOS (Apple Silicon) | 原生 zsh 配置（无 oh-my-zsh），见 `zshrc`、`zshrc.private`、`zprofile`、`config.ghostty` |
 | [`sophia/`](setup/sophia/) | macOS (Apple Silicon) | oh-my-zsh + Powerlevel10k，见 `zshrc`、`zshenv`、`zprofile`、`config.ghostty` |
-| [`barnettclaw/`](setup/barnettclaw/) | Linux | Barnett 的 OpenClaw（搭建中），含现代 CLI 工具链安装说明 |
 | [`lalalalisa/`](setup/lalalalisa/) | Windows 11 (HP) | Windows 宿主机，日常开发在其 WSL2 中进行 |
 | [`lalalalisa-wsl2/`](setup/lalalalisa-wsl2/) | WSL2 (Ubuntu 24) | bash 配置（`bashrc`），含 pyenv、nvm、fzf，及现代 CLI 工具链 |
-| [`pmclaw/`](setup/pmclaw/) | - | 产品角色（PM）的 OpenClaw（搭建中） |
+| [`openclaw/`](setup/openclaw/) | macOS / Ubuntu | OpenClaw 环境（搭建中），按平台分节，含 Ubuntu 现代 CLI 工具链安装说明 |
 | [`website-guangzhou/`](setup/website-guangzhou/) | Linux (阿里云 ECS) | 个人网站服务器，Ubuntu 22.04 + nginx |
 
 ## 工具配置（tools/）

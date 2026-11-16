@@ -71,6 +71,26 @@
 | `copilot` | GitHub Copilot CLI |
 | `pi` | pi coding agent |
 
+### Agent Skills
+
+用 `npx skills` 管理，全局安装在 `~/.agents/skills`，软链到 `~/.claude/skills`：
+
+| Skill | 来源 | 说明 |
+|------|------|------|
+| `humanizer` | [blader/humanizer](https://github.com/blader/humanizer) | 改写 AI 写作痕迹 |
+| `find-skills` | [vercel-labs/skills](https://github.com/vercel-labs/skills) | 搜索、安装 skill |
+
+项目级（`--project`）：`talk-with-ai` 使用 [mattpocock/skills](https://github.com/mattpocock/skills)，锁文件 `skills-lock.json` 随项目仓库提交。
+
+### Claude Code Plugins
+
+来自 `claude-plugins-official`，不走 `npx skills`：
+
+| Plugin | 版本 | 说明 |
+|------|------|------|
+| `postman` | 2.0.1 | API 工程全流程 |
+| `data-engineering` | 0.1.0 | Airflow / Astro / dbt 数据工程 |
+
 ### 其他
 
 | 工具 | 作用 |
